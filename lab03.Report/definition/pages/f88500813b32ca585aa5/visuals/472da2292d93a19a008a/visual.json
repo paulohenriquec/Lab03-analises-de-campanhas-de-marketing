@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "472da2292d93a19a008a",
   "position": {
-    "x": 10,
-    "y": 0,
+    "x": 13.803019410496047,
+    "y": 97.9247543733524,
     "z": 0,
-    "height": 280,
-    "width": 280,
+    "height": 116,
+    "width": 200,
     "tabOrder": 0
   },
   "visual": {
@@ -32,7 +32,8 @@
                 }
               },
               "queryRef": "CountNonNull(DadosMarketing.ID)",
-              "nativeQueryRef": "Contagem de ID"
+              "nativeQueryRef": "QTD Clientes",
+              "displayName": "QTD Clientes"
             }
           ]
         }
@@ -61,29 +62,109 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6a0d2cbc6461468000e8",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DadosMarketing"
-                  }
-                },
-                "Property": "ID"
+    "objects": {
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
               }
             },
-            "Function": 5
+            "dividerColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
-        },
-        "type": "Advanced"
-      }
-    ]
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }
