@@ -1,5 +1,5 @@
 {
-  "name": "CY25SU11",
+  "name": "CY26SU02",
   "dataColors": [
     "#118DFF",
     "#12239E",
@@ -286,15 +286,6 @@
         "labels": [
           {
             "labelStyle": "Data value, percent of total"
-          }
-        ]
-      }
-    },
-    "tableEx": {
-      "*": {
-        "columnHeaders": [
-          {
-            "columnAdjustment": "growToFit"
           }
         ]
       }
@@ -735,6 +726,11 @@
             "backgroundTransparency": 0,
             "gridLineType": "inner"
           }
+        ],
+        "seriesLabels": [
+          {
+            "backgroundTransparency": 0.9
+          }
         ]
       }
     },
@@ -749,6 +745,11 @@
           {
             "backgroundTransparency": 0,
             "gridLineType": "inner"
+          }
+        ],
+        "seriesLabels": [
+          {
+            "backgroundTransparency": 0.9
           }
         ]
       }
