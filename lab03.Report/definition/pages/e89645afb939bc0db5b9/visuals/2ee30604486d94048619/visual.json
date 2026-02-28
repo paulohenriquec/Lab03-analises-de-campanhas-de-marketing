@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "2ee30604486d94048619",
+  "position": {
+    "x": 354.27749820273186,
+    "y": 138.95039539899355,
+    "z": 0,
+    "height": 440.77641984184044,
+    "width": 572.36520488856945,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
+                    }
+                  },
+                  "Property": "Salario Anual"
+                }
+              },
+              "queryRef": "Sum(DadosMarketing.Salario Anual)",
+              "nativeQueryRef": "Salario Anual",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DadosMarketing"
+                        }
+                      },
+                      "Property": "Gasto com Alimentos"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(DadosMarketing.Gasto com Alimentos)",
+              "nativeQueryRef": "Soma de Gasto com Alimentos"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

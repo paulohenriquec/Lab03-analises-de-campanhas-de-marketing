@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "AccessibleOrchid",
+      "name": "AccessibleTidal",
       "reportVersionAtImport": {
         "visual": "2.6.0",
         "report": "3.1.0",
@@ -59,8 +59,8 @@
           "type": "BaseTheme"
         },
         {
-          "name": "AccessibleOrchid",
-          "path": "BuiltInThemes/AccessibleOrchid.json",
+          "name": "AccessibleTidal",
+          "path": "BuiltInThemes/AccessibleTidal.json",
           "type": "CustomTheme"
         }
       ]

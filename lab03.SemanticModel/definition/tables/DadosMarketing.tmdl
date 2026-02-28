@@ -254,11 +254,11 @@ table DadosMarketing
 				let
 				    Fonte = Csv.Document(File.Contents("C:\Users\paulo\Desktop\POWER BI\DSA\Lab03-analises-de-campanhas-de-marketing\dados_marketing.csv"),[Delimiter=";", Columns=27, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID", Int64.Type}, {"Ano Nascimento", Int64.Type}, {"Escolaridade", type text}, {"Estado Civil", type text}, {"Salario Anual", Int64.Type}, {"Filhos em Casa", Int64.Type}, {"Adolescentes em Casa", Int64.Type}, {"Data Cadastro", type date}, {"Dias Desde Ultima Compra", Int64.Type}, {"Gasto com Eletronicos", Int64.Type}, {"Gasto com Brinquedos", Int64.Type}, {"Gasto com Moveis", Int64.Type}, {"Gasto com Utilidades", Int64.Type}, {"Gasto com Alimentos", Int64.Type}, {"Gasto com Vestuario", Int64.Type}, {"Numero de Compras com Desconto", Int64.Type}, {"Numero de Compras na Web", Int64.Type}, {"Numero de Compras via Catalogo", Int64.Type}, {"Numero de Compras na Loja", Int64.Type}, {"Numero Visitas WebSite Mes", Int64.Type}, {"Compra na Campanha 1", Int64.Type}, {"Compra na Campanha 2", Int64.Type}, {"Compra na Campanha 3", Int64.Type}, {"Compra na Campanha 4", Int64.Type}, {"Compra na Campanha 5", Int64.Type}, {"Comprou", Int64.Type}, {"Pais", type text}})
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID", Int64.Type}, {"Ano Nascimento", Int64.Type}, {"Escolaridade", type text}, {"Estado Civil", type text}, {"Salario Anual", Int64.Type}, {"Filhos em Casa", Int64.Type}, {"Adolescentes em Casa", Int64.Type}, {"Data Cadastro", type date}, {"Dias Desde Ultima Compra", Int64.Type}, {"Gasto com Eletronicos", Int64.Type}, {"Gasto com Brinquedos", Int64.Type}, {"Gasto com Moveis", Int64.Type}, {"Gasto com Utilidades", Int64.Type}, {"Gasto com Alimentos", Int64.Type}, {"Gasto com Vestuario", Int64.Type}, {"Numero de Compras com Desconto", Int64.Type}, {"Numero de Compras na Web", Int64.Type}, {"Numero de Compras via Catalogo", Int64.Type}, {"Numero de Compras na Loja", Int64.Type}, {"Numero Visitas WebSite Mes", Int64.Type}, {"Compra na Campanha 1", Int64.Type}, {"Compra na Campanha 2", Int64.Type}, {"Compra na Campanha 3", Int64.Type}, {"Compra na Campanha 4", Int64.Type}, {"Compra na Campanha 5", Int64.Type}, {"Comprou", Int64.Type}, {"Pais", type text}}),
+				    #"Linhas Classificadas" = Table.Sort(#"Tipo Alterado",{{"Salario Anual", Order.Descending}}),
+				    #"Linhas Superiores Removidas" = Table.Skip(#"Linhas Classificadas",1)
 				in
-				    #"Tipo Alterado"
-
-	changedProperty = Name
+				    #"Linhas Superiores Removidas"
 
 	annotation PBI_NavigationStepName = Navegação
 
