@@ -1,0 +1,258 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "740d0068e34087004a07",
+  "position": {
+    "x": 577.88641265276783,
+    "y": 34.967649173256653,
+    "z": 3,
+    "height": 288.94320632638392,
+    "width": 618.37526959022284,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "decompositionTreeVisual",
+    "query": {
+      "queryState": {
+        "Analyze": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
+                    }
+                  },
+                  "Property": "TotalGasto"
+                }
+              },
+              "queryRef": "DadosMarketing.TotalGasto",
+              "nativeQueryRef": "TotalGasto"
+            }
+          ]
+        },
+        "ExplainBy": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
+                    }
+                  },
+                  "Property": "Estado Civil"
+                }
+              },
+              "queryRef": "DadosMarketing.Estado Civil",
+              "nativeQueryRef": "Estado Civil",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
+                    }
+                  },
+                  "Property": "Escolaridade"
+                }
+              },
+              "queryRef": "DadosMarketing.Escolaridade",
+              "nativeQueryRef": "Escolaridade",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DadosMarketing"
+                  }
+                },
+                "Property": "TotalGasto"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "ExplainBy"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "DadosMarketing.Estado Civil"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
+                    }
+                  },
+                  "Property": "Estado Civil"
+                }
+              }
+            ],
+            "isPinned": true,
+            "AIInformation": {
+              "method": "MaxSplit"
+            }
+          },
+          {
+            "queryRefs": [
+              "DadosMarketing.Escolaridade"
+            ],
+            "isCollapsed": true,
+            "isPinned": true,
+            "AIInformation": {
+              "method": "MaxSplit"
+            }
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Solteiro'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "tree": [
+        {
+          "properties": {
+            "effectiveBarsPerLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "insights": [
+        {
+          "properties": {
+            "isAINode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "DadosMarketing"
+                          }
+                        },
+                        "Property": "Estado Civil"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Solteiro'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "isAINode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "DadosMarketing"
+                          }
+                        },
+                        "Property": "Estado Civil"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Solteiro'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "DadosMarketing"
+                          }
+                        },
+                        "Property": "Escolaridade"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Curso Superior'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
