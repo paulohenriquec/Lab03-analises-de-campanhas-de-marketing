@@ -1,6 +1,10 @@
 table DadosMarketing
 	lineageTag: 63532027-6e15-4271-90e7-ef75651998d3
 
+	measure TotalGasto = SUMX(DadosMarketing, DadosMarketing[Gasto com Alimentos] + DadosMarketing[Gasto com Brinquedos] + DadosMarketing[Gasto com Eletronicos] + DadosMarketing[Gasto com Moveis] + DadosMarketing[Gasto com Utilidades] + DadosMarketing[Gasto com Vestuario])
+		formatString: 0
+		lineageTag: a8696658-eb7d-4093-8196-153d1f7b7bbb
+
 	column ID
 		dataType: int64
 		formatString: 0

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "2ee30604486d94048619",
   "position": {
-    "x": 354.27749820273186,
-    "y": 138.95039539899355,
+    "x": 13.803019410496047,
+    "y": 18.404025880661397,
     "z": 0,
-    "height": 440.77641984184044,
-    "width": 572.36520488856945,
+    "height": 380.04313443565781,
+    "width": 512.55212077641988,
     "tabOrder": 0
   },
   "visual": {
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "DadosMarketing"
-                        }
-                      },
-                      "Property": "Gasto com Alimentos"
+                    "SourceRef": {
+                      "Entity": "DadosMarketing"
                     }
                   },
-                  "Function": 0
+                  "Property": "TotalGasto"
                 }
               },
-              "queryRef": "Sum(DadosMarketing.Gasto com Alimentos)",
-              "nativeQueryRef": "Soma de Gasto com Alimentos"
+              "queryRef": "DadosMarketing.TotalGasto",
+              "nativeQueryRef": "TotalGasto"
             }
           ]
         }
