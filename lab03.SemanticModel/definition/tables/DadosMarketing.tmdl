@@ -236,10 +236,9 @@ table DadosMarketing
 		annotation SummarizationSetBy = Automatic
 
 	column Comprou
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 52f2c89d-afad-4240-b10e-a711247dbd04
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Comprou
 
 		annotation SummarizationSetBy = Automatic
@@ -260,9 +259,12 @@ table DadosMarketing
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID", Int64.Type}, {"Ano Nascimento", Int64.Type}, {"Escolaridade", type text}, {"Estado Civil", type text}, {"Salario Anual", Int64.Type}, {"Filhos em Casa", Int64.Type}, {"Adolescentes em Casa", Int64.Type}, {"Data Cadastro", type date}, {"Dias Desde Ultima Compra", Int64.Type}, {"Gasto com Eletronicos", Int64.Type}, {"Gasto com Brinquedos", Int64.Type}, {"Gasto com Moveis", Int64.Type}, {"Gasto com Utilidades", Int64.Type}, {"Gasto com Alimentos", Int64.Type}, {"Gasto com Vestuario", Int64.Type}, {"Numero de Compras com Desconto", Int64.Type}, {"Numero de Compras na Web", Int64.Type}, {"Numero de Compras via Catalogo", Int64.Type}, {"Numero de Compras na Loja", Int64.Type}, {"Numero Visitas WebSite Mes", Int64.Type}, {"Compra na Campanha 1", Int64.Type}, {"Compra na Campanha 2", Int64.Type}, {"Compra na Campanha 3", Int64.Type}, {"Compra na Campanha 4", Int64.Type}, {"Compra na Campanha 5", Int64.Type}, {"Comprou", Int64.Type}, {"Pais", type text}}),
 				    #"Linhas Classificadas" = Table.Sort(#"Tipo Alterado",{{"Salario Anual", Order.Descending}}),
-				    #"Linhas Superiores Removidas" = Table.Skip(#"Linhas Classificadas",1)
+				    #"Linhas Superiores Removidas" = Table.Skip(#"Linhas Classificadas",1),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Linhas Superiores Removidas",{{"Comprou", type text}}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Tipo Alterado1","1","Sim",Replacer.ReplaceText,{"Comprou"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído","0","Não",Replacer.ReplaceText,{"Comprou"})
 				in
-				    #"Linhas Superiores Removidas"
+				    #"Valor Substituído1"
 
 	annotation PBI_NavigationStepName = Navegação
 
